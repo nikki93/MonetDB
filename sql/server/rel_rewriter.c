@@ -401,8 +401,10 @@ exp_find_column( sql_rel *rel, sql_exp *exp, int pnr)
 }
 
 int
-exp_joins_rels(sql_exp *e, list *rels)
+exp_joins_rels(void *ep, void *relsp)
 {
+	sql_exp *e = ep;
+	list *rels = relsp;
 	sql_rel *l = NULL, *r = NULL;
 
 	assert (e->type == e_cmp);

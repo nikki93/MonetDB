@@ -151,8 +151,8 @@ extern int exp_match_col_exps( sql_exp *e, list *l);
 extern int exps_match_col_exps( sql_exp *e1, sql_exp *e2);
 /* todo rename */
 extern int exp_match_list( list *l, list *r);
-extern int exp_is_join(sql_exp *e, list *rels);
-extern int exp_is_eqjoin(sql_exp *e);
+extern int exp_is_join(void *e, void *rels);
+extern int exp_is_eqjoin(void *ep, void *);
 extern int exp_is_join_exp(sql_exp *e);
 extern int exp_is_atom(sql_exp *e);
 extern int exp_is_true(sql_exp *e);

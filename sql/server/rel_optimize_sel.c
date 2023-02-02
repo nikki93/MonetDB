@@ -3446,8 +3446,10 @@ rel_push_select_down(visitor *v, sql_rel *rel)
 }
 
 static int
-index_exp(sql_exp *e, sql_idx *i)
+index_exp(void *ep, void *ip)
 {
+	sql_exp *e = ep;
+	sql_idx *i = ip;
 	if (e->type == e_cmp && !is_complex_exp(e->flag)) {
 		switch(i->type) {
 		case hash_idx:

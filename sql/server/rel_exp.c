@@ -1624,8 +1624,10 @@ exp_is_rangejoin(sql_exp *e, list *rels)
 }
 
 int
-exp_is_join(sql_exp *e, list *rels)
+exp_is_join(void *ep, void *relsp)
 {
+	sql_exp *e = ep;
+	list *rels = relsp;
 	/* only simple compare expressions, ie not or lists
 		or range expressions (e->f)
 	 */
@@ -1640,8 +1642,9 @@ exp_is_join(sql_exp *e, list *rels)
 }
 
 int
-exp_is_eqjoin(sql_exp *e)
+exp_is_eqjoin(void *ep, void *)
 {
+	sql_exp *e = ep;
 	if (e->flag == cmp_equal) {
 		sql_exp *l = e->l;
 		sql_exp *r = e->r;

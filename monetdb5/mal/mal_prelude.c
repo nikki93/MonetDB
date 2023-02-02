@@ -498,8 +498,8 @@ malIncludeModules(Client c, char *modules[], int listing, bool no_mapi_server, c
 		/* load library */
 		if (!malLibraryEnabled(modules[i]))
 			continue;
-		if ((msg = loadLibrary(modules[i], listing)) != NULL)
-			return msg;
+		/*if ((msg = loadLibrary(modules[i], listing)) != NULL)*/
+		/*  return msg;*/
 	}
 	/* load the mal code for these modules and execute preludes */
 	if ((msg = malPrelude(c, listing, &sql, &mapi)) != NULL)
