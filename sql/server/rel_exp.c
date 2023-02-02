@@ -1642,8 +1642,9 @@ exp_is_join(void *ep, void *relsp)
 }
 
 int
-exp_is_eqjoin(void *ep, void *)
+exp_is_eqjoin(void *ep, void *p)
 {
+	(void)p;
 	sql_exp *e = ep;
 	if (e->flag == cmp_equal) {
 		sql_exp *l = e->l;
